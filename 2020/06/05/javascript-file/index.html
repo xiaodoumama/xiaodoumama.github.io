@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Hexo关于文章, 小逗嘛嘛">
+    <meta name="keywords" content="javascript.file, 小逗嘛嘛">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Hexo关于文章 | 小逗嘛嘛</title>
+    <title>javascript.file | 小逗嘛嘛</title>
     <link rel="icon" type="image/svg+xml" href="/assets/title.svg">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -205,12 +205,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Hexo关于文章</h1>
+                    <h1 class="description center-align post-title">javascript.file</h1>
                 </div>
             </div>
         </div>
@@ -343,28 +343,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-05-28
+                    2020-06-05
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-05-29
+                    2020-06-05
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    114
+                    786
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    3 分
                 </div>
                 
 
@@ -374,12 +374,78 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h1><h2 id="创建新文章"><a href="#创建新文章" class="headerlink" title="创建新文章"></a>创建新文章</h2><p><code>hexo new [layout] &lt;title&gt;</code></p>
-<h2 id="本地启动服务"><a href="#本地启动服务" class="headerlink" title="本地启动服务"></a>本地启动服务</h2><p><code>hexo s</code></p>
-<h2 id="准备发布"><a href="#准备发布" class="headerlink" title="准备发布"></a>准备发布</h2><p><code>hexo clean</code></p>
-<p><code>hexo deploy</code></p>
-<h2 id="只更新-static-file"><a href="#只更新-static-file" class="headerlink" title="只更新 static file"></a>只更新 static file</h2><p><code>hexo generate</code></p>
-<h2 id="复制-publish-文件夹到-io-文件夹中替换原有的文件，最后-Git-提交到远端仓库"><a href="#复制-publish-文件夹到-io-文件夹中替换原有的文件，最后-Git-提交到远端仓库" class="headerlink" title="复制 publish 文件夹到 io 文件夹中替换原有的文件，最后 Git 提交到远端仓库"></a>复制 publish 文件夹到 io 文件夹中替换原有的文件，最后 Git 提交到远端仓库</h2><script>
+                <h1 id="简述"><a href="#简述" class="headerlink" title="简述"></a>简述</h1><p>在HTML表单中，可以上传文件的唯一控件就是<code>&lt;input type="file"&gt;</code>。</p>
+<blockquote>
+<p>注意：当一个表单包含<code>&lt;input type="file"&gt;</code>时，表单的<code>enctype</code>必须指定为    <code>multipart/form-data</code>，<code>method</code>必须指定为<code>post</code>，浏览器才能正确编码并以<code>multipart/ form-data</code>格式发送表单的数据。</p>
+</blockquote>
+<blockquote>
+<p>出于安全考虑，浏览器只允许用户点击<code>&lt;input type="file"&gt;</code>来选择本地文件，用<code>JavaScript</code>对<code>&lt;input type="file"&gt;</code>的value赋值是没有任何效果的。当用户选择了上传某个文件后，<code>JavaScript</code>也无法获得该文件的真实路径.</p>
+</blockquote>
+<blockquote>
+<p>上传的文件都由后台服务器处理，<code>JavaScript</code>可以在提交表单时对文件扩展名做检查，以便防止用户上传无效格式的文件</p>
+</blockquote>
+<pre class=" language-js"><code class="language-js"><span class="token keyword">var</span> f <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'test-file-upload'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> filename <span class="token operator">=</span> f<span class="token punctuation">.</span>value<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 'C:\fakepath\test.png'</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>filename <span class="token operator">||</span> <span class="token operator">!</span><span class="token punctuation">(</span>filename<span class="token punctuation">.</span><span class="token function">endsWith</span><span class="token punctuation">(</span><span class="token string">'.jpg'</span><span class="token punctuation">)</span> <span class="token operator">||</span> filename<span class="token punctuation">.</span><span class="token function">endsWith</span><span class="token punctuation">(</span><span class="token string">'.png'</span><span class="token punctuation">)</span> <span class="token operator">||</span> filename<span class="token punctuation">.</span><span class="token function">endsWith</span><span class="token punctuation">(</span><span class="token string">'.gif'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">'Can only upload image file.'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<h1 id="File-API"><a href="#File-API" class="headerlink" title="File API"></a>File API</h1><p>HTML5的File API提供了<code>File</code>和<code>FileReader</code>两个主要对象，可以获得文件信息并读取文件。</p>
+<h2 id="example"><a href="#example" class="headerlink" title="example:"></a>example:</h2><h3 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h3><pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">method</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>POST<span class="token punctuation">"</span></span> <span class="token attr-name">action</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>http://localhost/card.html<span class="token punctuation">"</span></span>         <span class="token attr-name">enctype</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>multipart/form-data<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>test-image-preview<span class="token punctuation">"</span></span> <span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>border:1px solid rgb(204,204,204); width:100%; height:200px; background-size:contain;
+                background-repeat: no-repeat;background-position: center;<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>file<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>test-image-file<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>test<span class="token punctuation">"</span></span> <span class="token attr-name">onclick</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>s()<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>test-file-info<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">></span></span></code></pre>
+<h3 id="JS"><a href="#JS" class="headerlink" title="JS"></a>JS</h3><pre class=" language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">s</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span>
+        fileInput <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'test-image-file'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        info <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'test-file-info'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        preview <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'test-image-preview'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// 监听change事件:</span>
+    fileInput<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'change'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">// 清除背景图片:</span>
+        preview<span class="token punctuation">.</span>style<span class="token punctuation">.</span>backgroundImage <span class="token operator">=</span> <span class="token string">''</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">// 检查文件是否选择:</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>fileInput<span class="token punctuation">.</span>value<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            info<span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> <span class="token string">'没有选择文件'</span><span class="token punctuation">;</span>
+            <span class="token keyword">return</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token comment" spellcheck="true">// 获取File引用:</span>
+        <span class="token keyword">var</span> file <span class="token operator">=</span> fileInput<span class="token punctuation">.</span>files<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">// 获取File信息:</span>
+        info<span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> <span class="token string">'文件: '</span> <span class="token operator">+</span> file<span class="token punctuation">.</span>name <span class="token operator">+</span> <span class="token string">'&lt;br>'</span> <span class="token operator">+</span>
+            <span class="token string">'大小: '</span> <span class="token operator">+</span> file<span class="token punctuation">.</span>size <span class="token operator">+</span> <span class="token string">'&lt;br>'</span> <span class="token operator">+</span>
+            <span class="token string">'修改: '</span> <span class="token operator">+</span> file<span class="token punctuation">.</span>lastModifiedDate<span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>file<span class="token punctuation">.</span>type <span class="token operator">!==</span> <span class="token string">'image/jpeg'</span> <span class="token operator">&amp;&amp;</span> file<span class="token punctuation">.</span>type <span class="token operator">!==</span> <span class="token string">'image/png'</span> <span class="token operator">&amp;&amp;</span> file<span class="token punctuation">.</span>type <span class="token operator">!==</span> <span class="token string">'image/gif'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">'不是有效的图片文件!'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">return</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token comment" spellcheck="true">// 读取文件:</span>
+        <span class="token keyword">var</span> reader <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FileReader</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        reader<span class="token punctuation">.</span>onload <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token comment" spellcheck="true">// 文件读取完成后，自动调用此函数</span>
+            <span class="token keyword">var</span> data <span class="token operator">=</span> e<span class="token punctuation">.</span>target<span class="token punctuation">.</span>result<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 'data:image/jpeg;base64,/9j/4AAQSk...(base64编码)...'            </span>
+            preview<span class="token punctuation">.</span>style<span class="token punctuation">.</span>backgroundImage <span class="token operator">=</span> <span class="token string">'url('</span> <span class="token operator">+</span> data <span class="token operator">+</span> <span class="token string">')'</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">// 以DataURL的形式读取文件:</span>
+        reader<span class="token punctuation">.</span><span class="token function">readAsDataURL</span><span class="token punctuation">(</span>file<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre>
+<h1 id="回调"><a href="#回调" class="headerlink" title="回调"></a>回调</h1><p>在<code>JavaScript</code>中，浏览器的<code>JavaScript</code>执行引擎在执行<code>JavaScript</code>代码时，总是以单线程模式执行，也就是说，任何时候，<code>JavaScript</code>代码都不可能同时有多于1个线程在执行.</p>
+<p>在JavaScript中，执行多任务实际上都是异步调用，比如上面的代码：</p>
+<pre class=" language-js"><code class="language-js">reader<span class="token punctuation">.</span><span class="token function">readAsDataURL</span><span class="token punctuation">(</span>file<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>就会发起一个异步操作来读取文件内容。因为是异步操作，所以我们在JavaScript代码中就不知道什么时候操作结束，因此需要先设置一个回调函数：</p>
+<pre class=" language-js"><code class="language-js">reader<span class="token punctuation">.</span>onload <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// 当文件读取完成后，自动调用此函数:</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
+<p>当文件读取完成后，JavaScript引擎将自动调用我们设置的回调函数。执行回调函数时，文件已经读取完毕，所以我们可以在回调函数内部安全地获得文件内容。</p>
+<script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -422,7 +488,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://xiaodoumama.github.io/2020/05/28/hexo/">http://xiaodoumama.github.io/2020/05/28/hexo/</a>
+                    <a href="http://xiaodoumama.github.io/2020/06/05/javascript-file/">http://xiaodoumama.github.io/2020/06/05/javascript-file/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -626,32 +692,32 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/05/29/django/">
+                <a href="/2020/06/05/javascript-file/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="Django">
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="javascript.file">
                         
-                        <span class="card-title">Django</span>
+                        <span class="card-title">javascript.file</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            关于 DRF ViewSets
-REST 框架包含一个用于处理路由的抽象 ViewSets.
+                            简述在HTML表单中，可以上传文件的唯一控件就是&lt;input type="file"&gt;。
 
-当 ViewSet 类被实例化为一组视图时，通常仅在最后一刻将其绑定到一组方法处理程序，通常通过使用一个 Router 类来定义 URL con
+注意：当一个表单包含&lt;input type="file"&gt;时，表单的enctype必须指定为    multipart/fo
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-05-29
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-05
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -660,6 +726,7 @@ REST 框架包含一个用于处理路由的抽象 ViewSets.
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -678,28 +745,37 @@ REST 框架包含一个用于处理路由的抽象 ViewSets.
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/05/27/hello/">
+                <a href="/2020/05/30/Markdown%E8%AF%AD%E6%B3%95/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="douma">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="Markdown语法">
                         
-                        <span class="card-title">douma</span>
+                        <span class="card-title">Markdown语法</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Hello World!I am comming!
+                            标题：
+#h1 级标题
+##h2 级标题
+###h3 级标题
+####h4 级标题
+#####h5 级标题
+######h6 级标题
 
-        document.querySelectorAll('.github-emoji')
-          .forEach(el => {
-            if 
+分割线：三个以上的短线 即可作出分割线
+
+---
+
+超链接：[连接名称](网址 , 标题)
+[我是链接名
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-27
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-30
                             </span>
                         <span class="publish-author">
                             
@@ -712,8 +788,8 @@ REST 框架包含一个用于处理路由的抽象 ViewSets.
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E9%97%B2%E8%AF%9D%E5%AE%B6%E5%B8%B8/">
-                        <span class="chip bg-color">闲话家常</span>
+                    <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+                        <span class="chip bg-color">学习笔记</span>
                     </a>
                     
                 </div>
