@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xiaodoumama.github.io/"/>
-  <updated>2020-06-05T07:39:19.245Z</updated>
+  <updated>2020-06-12T10:09:42.645Z</updated>
   <id>http://xiaodoumama.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>playwright</title>
+    <link href="http://xiaodoumama.github.io/2020/06/12/playwright/"/>
+    <id>http://xiaodoumama.github.io/2020/06/12/playwright/</id>
+    <published>2020-06-12T09:22:11.000Z</published>
+    <updated>2020-06-12T10:09:42.645Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;安装&quot;&gt;&lt;a href=&quot;#安装&quot; class=&quot;headerlink&quot; title=&quot;安装&quot;&gt;&lt;/a&gt;安装&lt;/h1&gt;&lt;p&gt;使用npm或Yarn在Node.js项目中安装Playwright。需要Node.js 10或更高版本。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;npm
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="学习笔记" scheme="http://xiaodoumama.github.io/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
   
   <entry>
     <title>javascript.file</title>
