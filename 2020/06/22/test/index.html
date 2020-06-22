@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Django, 小逗嘛嘛">
+    <meta name="keywords" content="test, 小逗嘛嘛">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Django | 小逗嘛嘛</title>
+    <title>test | 小逗嘛嘛</title>
     <link rel="icon" type="image/svg+xml" href="/assets/title.svg">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -266,12 +266,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Django</h1>
+                    <h1 class="description center-align post-title">test</h1>
                 </div>
             </div>
         </div>
@@ -388,8 +388,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-                                <span class="chip bg-color">学习笔记</span>
+                            <a href="/tags/test-gitalk/">
+                                <span class="chip bg-color">test gitalk</span>
                             </a>
                         
                     </div>
@@ -404,28 +404,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-05-29
+                    2020-06-22
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-05-30
+                    2020-06-22
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    538
+                    60
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    1 分
                 </div>
                 
 
@@ -435,103 +435,7 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="关于-DRF-ViewSets"><a href="#关于-DRF-ViewSets" class="headerlink" title="关于 DRF ViewSets"></a>关于 DRF ViewSets</h1><ul>
-<li><p>REST 框架包含一个用于处理路由的抽象 ViewSets.</p>
-</li>
-<li><p>当 ViewSet 类被实例化为一组视图时，通常仅在最后一刻将其绑定到一组方法处理程序，通常通过使用一个 Router 类来定义 URL conf 的复杂性</p>
-</li>
-<li><p><code>ModelViewSet</code>类视图集自动提供<code>list</code>，<code>create</code>，<code>检索retrieve</code>，<code>update</code>和<code>destroy</code>actions。</p>
-</li>
-<li><p>默认情况下，使用@action 装饰器的自定义操作将响应 GET 请求。methods 如果我们想要一个响应 POST 请求的动作，则可以使用参数。<br><code>@action(methods=['post'])</code>。</p>
-</li>
-<li><p><code>@action</code>这个装饰可以用来添加不符合标准的任何自定义端点<code>create</code>/ <code>update</code>/ <code>delete</code>风格。</p>
-</li>
-<li><p>默认情况下，自定义操作的 URL 取决于方法名称本身。如果要更改 url 的构造方式，则可以将其 url_path 作为装饰关键字参数。</p>
-</li>
-</ul>
-<h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><h3 id="models-py"><a href="#models-py" class="headerlink" title="models.py"></a>models.py</h3><pre class=" language-python"><code class="language-python"><span class="token keyword">from</span> django<span class="token punctuation">.</span>db <span class="token keyword">import</span> models
-
-
-<span class="token keyword">class</span> <span class="token class-name">Testmethods</span><span class="token punctuation">(</span>models<span class="token punctuation">.</span>Model<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    gets <span class="token operator">=</span> models<span class="token punctuation">.</span>CharField<span class="token punctuation">(</span>max_length<span class="token operator">=</span><span class="token number">255</span><span class="token punctuation">)</span>
-    posts <span class="token operator">=</span> models<span class="token punctuation">.</span>CharField<span class="token punctuation">(</span>max_length<span class="token operator">=</span><span class="token number">255</span><span class="token punctuation">)</span>
-    deletes <span class="token operator">=</span> models<span class="token punctuation">.</span>CharField<span class="token punctuation">(</span>max_length<span class="token operator">=</span><span class="token number">255</span><span class="token punctuation">)</span>
-    options <span class="token operator">=</span> models<span class="token punctuation">.</span>CharField<span class="token punctuation">(</span>max_length<span class="token operator">=</span><span class="token number">255</span><span class="token punctuation">)</span>
-
-
-    <span class="token keyword">def</span> <span class="token function">__str__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token keyword">return</span> self<span class="token punctuation">.</span>gets
-
-
-    <span class="token keyword">class</span> <span class="token class-name">Meta</span><span class="token punctuation">:</span>
-        verbose_name <span class="token operator">=</span> <span class="token string">"测试视图集"</span>
-        verbose_name_plural <span class="token operator">=</span> verbose_name
-</code></pre>
-<h3 id="serializers-py"><a href="#serializers-py" class="headerlink" title="serializers.py"></a>serializers.py</h3><pre class=" language-python"><code class="language-python">
-<span class="token keyword">from</span> rest_framework <span class="token keyword">import</span> serializers
-<span class="token keyword">from</span> <span class="token punctuation">.</span>models <span class="token keyword">import</span> Testmethods
-
-
-<span class="token keyword">class</span> <span class="token class-name">TestSerializer</span><span class="token punctuation">(</span>serializers<span class="token punctuation">.</span>ModelSerializer<span class="token punctuation">)</span><span class="token punctuation">:</span>
-
-
-    <span class="token keyword">class</span> <span class="token class-name">Meta</span><span class="token punctuation">:</span>
-        model <span class="token operator">=</span> Testmethods
-        fields <span class="token operator">=</span> <span class="token string">'__all__'</span>
-</code></pre>
-<h3 id="view-py"><a href="#view-py" class="headerlink" title="view.py"></a>view.py</h3><pre class=" language-python"><code class="language-python"><span class="token keyword">from</span> rest_framework<span class="token punctuation">.</span>decorators <span class="token keyword">import</span> action
-<span class="token keyword">from</span> rest_framework <span class="token keyword">import</span> viewsets
-<span class="token keyword">from</span> <span class="token punctuation">.</span>models <span class="token keyword">import</span> Testmethods
-<span class="token keyword">from</span> <span class="token punctuation">.</span>serializers <span class="token keyword">import</span> TestSerializer
-
-
-<span class="token keyword">class</span> <span class="token class-name">methodsviewset</span><span class="token punctuation">(</span>viewsets<span class="token punctuation">.</span>ModelViewSet<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    app_model <span class="token operator">=</span> Testmethods
-    queryset <span class="token operator">=</span> Testmethods<span class="token punctuation">.</span>objects<span class="token punctuation">.</span>all<span class="token punctuation">(</span><span class="token punctuation">)</span>
-    serializer_class <span class="token operator">=</span> TestSerializer
-    permission_classes <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">]</span>
-</code></pre>
-<h3 id="urls-py"><a href="#urls-py" class="headerlink" title="urls.py"></a>urls.py</h3><pre class=" language-python"><code class="language-python"><span class="token keyword">from</span> rest_framework<span class="token punctuation">.</span>routers <span class="token keyword">import</span> SimpleRouter
-<span class="token keyword">from</span> <span class="token punctuation">.</span>views <span class="token keyword">import</span> methodsviewset
-<span class="token keyword">from</span> <span class="token punctuation">.</span>models <span class="token keyword">import</span> Testmethods
-
-
-app_name <span class="token operator">=</span> <span class="token string">'testviewsets'</span>
-
-router <span class="token operator">=</span> SimpleRouter<span class="token punctuation">(</span><span class="token punctuation">)</span>
-router<span class="token punctuation">.</span>register<span class="token punctuation">(</span>r<span class="token string">''</span><span class="token punctuation">,</span> methodsviewset<span class="token punctuation">)</span>
-urlpatterns <span class="token operator">=</span> router<span class="token punctuation">.</span>urls
-
-</code></pre>
-<h3 id="根-urls-py"><a href="#根-urls-py" class="headerlink" title="根 urls.py"></a>根 urls.py</h3><pre class=" language-python"><code class="language-python">urlpatterns <span class="token operator">=</span> <span class="token punctuation">[</span>
-   path<span class="token punctuation">(</span><span class="token string">'test/'</span><span class="token punctuation">,</span>include<span class="token punctuation">(</span><span class="token string">"testviewsets.urls"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-<span class="token punctuation">]</span></code></pre>
-<h2 id="解析"><a href="#解析" class="headerlink" title="解析"></a>解析</h2><p>以上代码可产生以下路由,无需显示指定，默认返回的均为 request 的 data 数据。当需要对返回的数据进行操作时，可显示定义该方法，如<code>def list(self,request):</code>则 list 请求会默认使用这个函数进行处理。</p>
-<ul>
-<li>当<code>methods = GET</code>时</li>
-</ul>
-<pre class=" language-python"><code class="language-python">获取list
-http<span class="token punctuation">:</span><span class="token operator">//</span><span class="token number">127.0</span><span class="token punctuation">.</span><span class="token number">0.1</span><span class="token punctuation">:</span><span class="token number">8000</span><span class="token operator">/</span>test<span class="token operator">/</span>
-获取detail
-http<span class="token punctuation">:</span><span class="token operator">//</span><span class="token number">127.0</span><span class="token punctuation">.</span><span class="token number">0.1</span><span class="token punctuation">:</span><span class="token number">8000</span><span class="token operator">/</span>test<span class="token operator">/</span>id<span class="token operator">/</span></code></pre>
-<ul>
-<li>当<code>methods = POST</code>时</li>
-</ul>
-<pre class=" language-python"><code class="language-python">create
-http<span class="token punctuation">:</span><span class="token operator">//</span><span class="token number">127.0</span><span class="token punctuation">.</span><span class="token number">0.1</span><span class="token punctuation">:</span><span class="token number">8000</span><span class="token operator">/</span>test<span class="token operator">/</span>
-<span class="token punctuation">{</span>json<span class="token punctuation">}</span></code></pre>
-<ul>
-<li>当<code>methods = PUT</code>时</li>
-</ul>
-<pre class=" language-python"><code class="language-python">update
-http<span class="token punctuation">:</span><span class="token operator">//</span><span class="token number">127.0</span><span class="token punctuation">.</span><span class="token number">0.1</span><span class="token punctuation">:</span><span class="token number">8000</span><span class="token operator">/</span>test<span class="token operator">/</span>id<span class="token operator">/</span>
-<span class="token punctuation">{</span>json<span class="token punctuation">}</span></code></pre>
-<ul>
-<li>当<code>methods = DELETE</code>时</li>
-</ul>
-<pre class=" language-python"><code class="language-python">delete
-http<span class="token punctuation">:</span><span class="token operator">//</span><span class="token number">127.0</span><span class="token punctuation">.</span><span class="token number">0.1</span><span class="token punctuation">:</span><span class="token number">8000</span><span class="token operator">/</span>test<span class="token operator">/</span>id<span class="token operator">/</span></code></pre>
-<script>
+                <h1 id="什么是初始化创建"><a href="#什么是初始化创建" class="headerlink" title="什么是初始化创建"></a>什么是初始化创建</h1><script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -574,7 +478,7 @@ http<span class="token punctuation">:</span><span class="token operator">//</spa
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://xiaodoumama.github.io/2020/05/29/django/">http://xiaodoumama.github.io/2020/05/29/django/</a>
+                    <a href="http://xiaodoumama.github.io/2020/06/22/test/">http://xiaodoumama.github.io/2020/06/22/test/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -612,8 +516,8 @@ http<span class="token punctuation">:</span><span class="token operator">//</spa
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-                                    <span class="chip bg-color">学习笔记</span>
+                                <a href="/tags/test-gitalk/">
+                                    <span class="chip bg-color">test gitalk</span>
                                 </a>
                             
                         </div>
@@ -781,7 +685,7 @@ http<span class="token punctuation">:</span><span class="token operator">//</spa
         repo: 'talk',
         owner: 'xiaodoumama',
         admin: ["xiaodoumama"],
-        id: '2020-05-29T16-05-00',
+        id: '2020-06-22T15-10-40',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -805,42 +709,33 @@ http<span class="token punctuation">:</span><span class="token operator">//</spa
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/05/30/Markdown%E8%AF%AD%E6%B3%95/">
+                <a href="/2020/06/22/test/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="Markdown语法">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="test">
                         
-                        <span class="card-title">Markdown语法</span>
+                        <span class="card-title">test</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            标题：
-#h1 级标题
-##h2 级标题
-###h3 级标题
-####h4 级标题
-#####h5 级标题
-######h6 级标题
-
-分割线：三个以上的短线 即可作出分割线
-
----
-
-超链接：[连接名称](网址 , 标题)
-[我是链接名
+                            什么是初始化创建
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) 
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-05-30
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-22
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -849,11 +744,12 @@ http<span class="token punctuation">:</span><span class="token operator">//</spa
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-                        <span class="chip bg-color">学习笔记</span>
+                    <a href="/tags/test-gitalk/">
+                        <span class="chip bg-color">test gitalk</span>
                     </a>
                     
                 </div>
@@ -867,29 +763,26 @@ http<span class="token punctuation">:</span><span class="token operator">//</spa
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/05/28/hexo/">
+                <a href="/2020/06/12/playwright/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="Hexo关于文章">
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="playwright">
                         
-                        <span class="card-title">Hexo关于文章</span>
+                        <span class="card-title">playwright</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Hexo创建新文章hexo new [layout] &lt;title&gt;
-本地启动服务hexo s
-准备发布hexo clean
-hexo deploy
-只更新 static filehexo generate
-复制 publish
+                            安装使用npm或Yarn在Node.js项目中安装Playwright。需要Node.js 10或更高版本。
+npm i playwright --save
+注意：貌似不能使用全局安装，只能在相应的项目下安装，--save是为了在packa
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-28
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-12
                             </span>
                         <span class="publish-author">
                             
