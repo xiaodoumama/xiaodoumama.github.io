@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xiaodoumama.github.io/"/>
-  <updated>2020-06-22T07:12:02.894Z</updated>
+  <updated>2020-06-15T02:17:57.003Z</updated>
   <id>http://xiaodoumama.github.io/</id>
   
   <author>
@@ -15,32 +15,6 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>test</title>
-    <link href="http://xiaodoumama.github.io/2020/06/22/test/"/>
-    <id>http://xiaodoumama.github.io/2020/06/22/test/</id>
-    <published>2020-06-22T07:10:40.000Z</published>
-    <updated>2020-06-22T07:12:02.894Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;什么是初始化创建&quot;&gt;&lt;a href=&quot;#什么是初始化创建&quot; class=&quot;headerlink&quot; title=&quot;什么是初始化创建&quot;&gt;&lt;/a&gt;什么是初始化创建&lt;/h1&gt;&lt;script&gt;
-       
-        
-      
-    
-    </summary>
-    
-    
-    
-      <category term="test gitalk" scheme="http://xiaodoumama.github.io/tags/test-gitalk/"/>
-    
-  </entry>
   
   <entry>
     <title>playwright</title>
