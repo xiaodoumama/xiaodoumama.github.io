@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="playwright, 小逗嘛嘛">
+    <meta name="keywords" content="iterm快捷键使用, 小逗嘛嘛">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>playwright | 小逗嘛嘛</title>
+    <title>iterm快捷键使用 | 小逗嘛嘛</title>
     <link rel="icon" type="image/svg+xml" href="/assets/title.svg">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -266,12 +266,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">playwright</h1>
+                    <h1 class="description center-align post-title">iterm快捷键使用</h1>
                 </div>
             </div>
         </div>
@@ -404,28 +404,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-06-12
+                    2020-09-03
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-06-15
+                    2020-09-03
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    722
+                    652
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    2 分
                 </div>
                 
 
@@ -435,98 +435,15 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>使用npm或Yarn在Node.js项目中安装Playwright。需要Node.js 10或更高版本。</p>
-<p><code>npm i playwright --save</code></p>
-<p><strong>注意：貌似不能使用全局安装，只能在相应的项目下安装，<code>--save</code>是为了在<code>packagejson</code>里面注册这个安装包。在安装过程中，<code>Playwright</code>将下载<code>Chromium</code>，<code>Firefox</code>和<code>WebKit</code>的浏览器二进制文件。</strong></p>
-<h1 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h1><p>一旦安装，你可以<code>require playwright</code>在<code>Node.js</code>，并启动任何3个浏览器（<code>chromium</code>，<code>firefox</code>和<code>webkit</code>）。</p>
-<pre class=" language-js"><code class="language-js">
-<span class="token keyword">const</span> <span class="token punctuation">{</span> chromium <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'playwright'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-<span class="token punctuation">(</span><span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
-  <span class="token keyword">const</span> browser <span class="token operator">=</span> <span class="token keyword">await</span> chromium<span class="token punctuation">.</span><span class="token function">launch</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token comment" spellcheck="true">// Create pages, interact with UI elements, assert values</span>
-  <span class="token keyword">await</span> browser<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
-<blockquote>
-<p><code>async</code>关键字，将关键字放在函数声明的前面，以将其转换为异步函数。异步函数是一种知道如何预期<code>await</code>使用关键字调用异步代码的可能性的函数.</p>
-</blockquote>
-<pre class=" language-js"><code class="language-js"><span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">hello</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> <span class="token string">"Hello"</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
-<span class="token function">hello</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
-<blockquote>
-<p>调用该函数将返回一个<code>Promise</code>。这是异步函数的特征之一-确保将它们的返回值转换为<code>Promise</code>。将<code>async</code>关键字添加到函数中以告诉它们返回<code>promise</code>，而不是直接返回值.</p>
-</blockquote>
-<blockquote>
-<p>将<code>async</code>函数与<code>await</code>关键字结合使用时，它的真正优势就显而易见了-实际上，它<code>await</code>仅在<code>async</code>函数内部起作用。可以将其放在任何基于异步基于<code>Promise</code>的函数的前面，以在该行上暂停代码，直到实现<code>Promise</code>，然后返回结果值。同时，可能正在等待执行机会的其他代码也会这样做。</p>
-</blockquote>
-<h1 id="脚本示例"><a href="#脚本示例" class="headerlink" title="脚本示例"></a>脚本示例</h1><p>实现自动发微博功能    </p>
-<blockquote>
-<p>此代码示例片段只实现了最简单的发微博功能，并未有错误处理等相关内容.</p>
-</blockquote>
-<pre class=" language-js"><code class="language-js"><span class="token keyword">const</span> <span class="token punctuation">{</span> chromium <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'playwright'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">const</span> readline <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'readline'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>        #输入输出，手机收到验证码后，输入验证码，根据输入的验证码填入界面对应的地方
-
-<span class="token keyword">const</span> rl <span class="token operator">=</span> readline<span class="token punctuation">.</span><span class="token function">createInterface</span><span class="token punctuation">(</span><span class="token punctuation">{</span>       
-    input<span class="token punctuation">:</span> process<span class="token punctuation">.</span>stdin<span class="token punctuation">,</span>
-    output<span class="token punctuation">:</span> process<span class="token punctuation">.</span>stdout
-<span class="token punctuation">}</span><span class="token punctuation">)</span>
-
-<span class="token keyword">class</span> <span class="token class-name">Ut</span> <span class="token punctuation">{</span>
-    <span class="token comment" spellcheck="true">/**
-    * 异步延迟
-    * @param {number} time 延迟的时间,单位毫秒
-    */</span>
-    <span class="token keyword">static</span> <span class="token function">sleep</span><span class="token punctuation">(</span>time <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token punctuation">(</span>resolve<span class="token punctuation">,</span> reject<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
-            <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
-                <span class="token function">resolve</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token punctuation">}</span><span class="token punctuation">,</span> time<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span><span class="token punctuation">)</span>
-    <span class="token punctuation">}</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-
-
-<span class="token punctuation">(</span><span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
-    <span class="token keyword">const</span> browser <span class="token operator">=</span> <span class="token keyword">await</span> chromium<span class="token punctuation">.</span><span class="token function">launch</span><span class="token punctuation">(</span><span class="token punctuation">{</span> headless<span class="token punctuation">:</span> <span class="token boolean">false</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">const</span> page <span class="token operator">=</span> <span class="token keyword">await</span> browser<span class="token punctuation">.</span><span class="token function">newPage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">await</span> Ut<span class="token punctuation">.</span><span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">5000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">await</span> page<span class="token punctuation">.</span><span class="token function">goto</span><span class="token punctuation">(</span><span class="token string">'http://www.weibo.com'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">await</span> Ut<span class="token punctuation">.</span><span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">8000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">await</span> page<span class="token punctuation">.</span><span class="token function">fill</span><span class="token punctuation">(</span><span class="token string">'#loginname'</span><span class="token punctuation">,</span> <span class="token string">'&lt;name>'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">await</span> page<span class="token punctuation">.</span><span class="token function">fill</span><span class="token punctuation">(</span><span class="token string">'input[name=password]'</span><span class="token punctuation">,</span> <span class="token string">'&lt;password>'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">await</span> Ut<span class="token punctuation">.</span><span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">3000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">await</span> page<span class="token punctuation">.</span><span class="token function">click</span><span class="token punctuation">(</span><span class="token string">'div.login_btn'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">await</span> Ut<span class="token punctuation">.</span><span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">8000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">await</span> page<span class="token punctuation">.</span><span class="token function">click</span><span class="token punctuation">(</span><span class="token string">'#message_sms_login'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">await</span> Ut<span class="token punctuation">.</span><span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">5000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-    <span class="token keyword">var</span> answer<span class="token punctuation">;</span>
-    rl<span class="token punctuation">.</span><span class="token function">question</span><span class="token punctuation">(</span><span class="token string">"请输入验证码:\n"</span><span class="token punctuation">,</span> <span class="token keyword">async</span> <span class="token punctuation">(</span>input<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
-        answer <span class="token operator">=</span> input<span class="token punctuation">;</span>
-        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>answer<span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-        <span class="token keyword">await</span> page<span class="token punctuation">.</span><span class="token function">fill</span><span class="token punctuation">(</span><span class="token string">'div.clearfix input:first-child'</span><span class="token punctuation">,</span> answer<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">await</span> page<span class="token punctuation">.</span><span class="token function">fill</span><span class="token punctuation">(</span><span class="token string">'div.clearfix input:nth-child(2)'</span><span class="token punctuation">,</span> answer<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">await</span> page<span class="token punctuation">.</span><span class="token function">fill</span><span class="token punctuation">(</span><span class="token string">'div.clearfix input:nth-child(3)'</span><span class="token punctuation">,</span> answer<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">await</span> page<span class="token punctuation">.</span><span class="token function">fill</span><span class="token punctuation">(</span><span class="token string">'div.clearfix input:nth-child(4)'</span><span class="token punctuation">,</span> answer<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">await</span> page<span class="token punctuation">.</span><span class="token function">fill</span><span class="token punctuation">(</span><span class="token string">'div.clearfix input:nth-child(5)'</span><span class="token punctuation">,</span> answer<span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">await</span> page<span class="token punctuation">.</span><span class="token function">fill</span><span class="token punctuation">(</span><span class="token string">'div.clearfix input:last-child'</span><span class="token punctuation">,</span> answer<span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">await</span> page<span class="token punctuation">.</span><span class="token function">click</span><span class="token punctuation">(</span><span class="token string">'#message_confirm'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-        <span class="token comment" spellcheck="true">// await page.screenshot({ path: `weather.png` });</span>
-        <span class="token keyword">await</span> page<span class="token punctuation">.</span><span class="token function">fill</span><span class="token punctuation">(</span><span class="token string">'textarea.W_input'</span><span class="token punctuation">,</span> process<span class="token punctuation">.</span>argv<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">await</span> page<span class="token punctuation">.</span><span class="token function">click</span><span class="token punctuation">(</span><span class="token string">'a.W_btn_a'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">await</span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'操作结束'</span><span class="token punctuation">)</span>
-
-
-    <span class="token punctuation">}</span><span class="token punctuation">)</span>
-
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
-<blockquote>
-<p>启动代码 <code>node filename 'weibocontent'</code></p>
-</blockquote>
+                <h3 id="光标控制"><a href="#光标控制" class="headerlink" title="光标控制"></a>光标控制</h3><p>ctrl + a: 到行首<br>ctrl + e: 行末<br>ctrl + f/b: 前进后退，相当于左右方向键，但是显然比移开手按方向键更慢<br>ctrl + p: 上一条命令，相当于方向键上<br>ctrl + r: 搜索命令历史，这个大家都应该很熟悉了<br>ctrl + d: 删除当前字符<br>ctrl + h: 删除之前的字符<br>ctrl + w: 删除光标前的单词<br>ctrl + k: 删除到文本末尾<br>ctrl + t: 交换光标处文本<br>⌘ + —/+/0: 调整字体大小<br>⌘ + r:清屏，其实是滚到新的一屏，并没有清空。ctrl + l 也可以做到。</p>
+<h3 id="窗口操作"><a href="#窗口操作" class="headerlink" title="窗口操作"></a>窗口操作</h3><p>新建窗口：shift + command + d（横向）command + d（竖向）<br>关闭窗口：shift + command + w<br>前一个窗口：command + `<br>后一个窗口：command + ~<br>进入窗口 1,2,3：option + command + 编号</p>
+<h3 id="标签页操作"><a href="#标签页操作" class="headerlink" title="标签页操作"></a>标签页操作</h3><p>新建标签页: Command + T<br>关闭标签页: Command + W<br>前一个标签页: Command + 左方向键，Shift + Command + [<br>后一个标签页: Command + 右方向键，Shitf + Command + ]<br>进入标签页 1，2，3…: Command + 标签页编号<br>*Expose 标签页: Option + Command + E（将标签页打撒到全屏，并可以全局搜索所有的标签页）</p>
+<h3 id="面板操作"><a href="#面板操作" class="headerlink" title="面板操作"></a>面板操作</h3><p>垂直分割: Command + D<br>水平分割: Shift + Command + D<br>前一个面板: Command + [<br>后一个面板: Command + ]<br>切换到上/下/左/右面板: Option + Command + 上下左右方向键</p>
+<h3 id="其他功能"><a href="#其他功能" class="headerlink" title="其他功能"></a>其他功能</h3><p>支持自定义全局快捷键用于显示和隐藏 iTerm2 Preference -&gt; Keys －&gt; Show/hide iTerm2 with a system-wide hotkey 打上勾之后<br>进入和退出全屏: Command + Enter<br>查看当前终端中光标的位置: Command + /<br>命令自动补全: Command + ;（很少用这个，还是感觉 Zsh 的补全更好用）<br>开启和关闭背景半透明: Command + u<br>清屏（重置当前终端）: Command + r</p>
+<h3 id="位置书签"><a href="#位置书签" class="headerlink" title="位置书签"></a>位置书签</h3><p>在当前会话中按 Command + Shift + m 可以保存当前位置，之后可以按 Command + Shift + j 跳回这个位置。</p>
+<h3 id="粘贴历史"><a href="#粘贴历史" class="headerlink" title="粘贴历史"></a>粘贴历史</h3><p>使用 Command + Shift + h 可以呼出粘贴历史，支持模糊检索。还可以设置将粘贴历史保存在磁盘上（Preferences -&gt; General）</p>
+<h3 id="即时回放"><a href="#即时回放" class="headerlink" title="即时回放"></a>即时回放</h3><p>使用 Command + Opt + b 打开即时回放，按 Esc 退出。即时回放可以记录终端输出的状态，让你“穿越时间”查看终端内容。默认每个会话最多储存 4MB 的内容，可以在设置中更改（Preferences -&gt; Genernal -&gt; Instant Replay）。</p>
+<p>转载自<a href="https://www.jianshu.com/p/da7728a8a4d7" target="_blank" rel="noopener">https://www.jianshu.com/p/da7728a8a4d7</a></p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -570,7 +487,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://xiaodoumama.github.io/2020/06/12/playwright/">http://xiaodoumama.github.io/2020/06/12/playwright/</a>
+                    <a href="http://xiaodoumama.github.io/2020/09/03/iterm%E5%BF%AB%E6%8D%B7%E9%94%AE%E4%BD%BF%E7%94%A8/">http://xiaodoumama.github.io/2020/09/03/iterm%E5%BF%AB%E6%8D%B7%E9%94%AE%E4%BD%BF%E7%94%A8/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -777,7 +694,7 @@
         repo: 'talk',
         owner: 'xiaodoumama',
         admin: ["xiaodoumama"],
-        id: '2020-06-12T17-22-11',
+        id: '2020-09-03T10-06-26',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -801,9 +718,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2020/09/03/iterm%E5%BF%AB%E6%8D%B7%E9%94%AE%E4%BD%BF%E7%94%A8/">
                     <div class="card-image">
@@ -821,9 +739,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-09-03
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-09-03
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -832,6 +750,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -850,26 +769,26 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/06/05/javascript-file/">
+                <a href="/2020/06/12/playwright/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="javascript.file">
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="playwright">
                         
-                        <span class="card-title">javascript.file</span>
+                        <span class="card-title">playwright</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            简述在HTML表单中，可以上传文件的唯一控件就是&lt;input type="file"&gt;。
-
-注意：当一个表单包含&lt;input type="file"&gt;时，表单的enctype必须指定为    multipart/fo
+                            安装使用npm或Yarn在Node.js项目中安装Playwright。需要Node.js 10或更高版本。
+npm i playwright --save
+注意：貌似不能使用全局安装，只能在相应的项目下安装，--save是为了在packa
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-05
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-12
                             </span>
                         <span class="publish-author">
                             

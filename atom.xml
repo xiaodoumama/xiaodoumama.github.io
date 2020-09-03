@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xiaodoumama.github.io/"/>
-  <updated>2020-06-15T02:17:57.003Z</updated>
+  <updated>2020-09-03T02:14:46.699Z</updated>
   <id>http://xiaodoumama.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>iterm快捷键使用</title>
+    <link href="http://xiaodoumama.github.io/2020/09/03/iterm%E5%BF%AB%E6%8D%B7%E9%94%AE%E4%BD%BF%E7%94%A8/"/>
+    <id>http://xiaodoumama.github.io/2020/09/03/iterm%E5%BF%AB%E6%8D%B7%E9%94%AE%E4%BD%BF%E7%94%A8/</id>
+    <published>2020-09-03T02:06:26.000Z</published>
+    <updated>2020-09-03T02:14:46.699Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;光标控制&quot;&gt;&lt;a href=&quot;#光标控制&quot; class=&quot;headerlink&quot; title=&quot;光标控制&quot;&gt;&lt;/a&gt;光标控制&lt;/h3&gt;&lt;p&gt;ctrl + a: 到行首&lt;br&gt;ctrl + e: 行末&lt;br&gt;ctrl + f/b:
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="学习笔记" scheme="http://xiaodoumama.github.io/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
   
   <entry>
     <title>playwright</title>
